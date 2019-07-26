@@ -1,3 +1,7 @@
+---
+typora-copy-images-to: ./
+---
+
 # WeiboCrawler
 
 ## 简介
@@ -81,4 +85,6 @@ WeiboCrawler 是基于微博搜索功能用来采集微博数据的爬虫，利�
 
 2.MongoDB安装，不需要存储可略过
 
-3.运行UIManager，按照控制台输出的提示完成数据爬取![微信截图_20190726115112](C:\Users\Administrator\Desktop\微信截图_20190726115112.png)
+3.运行UIManager，按照控制台输出的提示完成数据爬取
+
+![微信截图_20190726115112](微信截图_20190726115112.png)
