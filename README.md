@@ -87,5 +87,5 @@ WeiboCrawler 是基于微博搜索功能用来采集微博数据的爬虫，利�
 
 3.运行UIManager，按照控制台输出的提示完成数据爬取
 
-​	![效果图]([https://github.com/astrodrew/WeiboCrawler/blob/master/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190726115112.png](https://github.com/astrodrew/WeiboCrawler/blob/master/微信截图_20190726115112.png))
+​	![效果图](https://github.com/astrodrew/WeiboCrawler/blob/master/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190726115112.png)
 
