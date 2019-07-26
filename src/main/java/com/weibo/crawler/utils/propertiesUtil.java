@@ -15,23 +15,25 @@ import java.util.Set;
 public class propertiesUtil {
     public static String userName =null;
     public static String password =null;
-
+    public static String driverPath = null;
     public static String keywords = null;
     public static String startTime = null;
     public static String endTime = null;
     public static int interval = 0;
+    public static Boolean isInsert = true;
     public static void readProperties(){
         Properties pros = new Properties();
         try {
             pros.load(new InputStreamReader(propertiesUtil.class.getClassLoader().getResourceAsStream("crawler.properties"), "UTF-8"));
             userName = pros.get("user_name").toString();
             password =pros.get("password").toString();
-
+            driverPath = pros.get("driverPath").toString();
             keywords = pros.get("keywords").toString();
 
             startTime = pros.get("startTime").toString();
             endTime = pros.get("endTime").toString();
             interval = Integer.valueOf(pros.get("interval").toString());
+            isInsert = Boolean.getBoolean(pros.get("is_intert").toString());
         } catch (IOException e) {
 
         }

@@ -33,8 +33,8 @@ public class SeleniumOperator4Weibo {
         return driver;
     }
 
-    public  static  WebDriver ManuallyLoginWeibo() throws InterruptedException {
-        WebDriver driver = initalWebDriver("D:\\chrome\\chromedriver_win32\\chromedriver.exe");
+    public  static  WebDriver ManuallyLoginWeibo(String driverPath) throws InterruptedException {
+        WebDriver driver = initalWebDriver(driverPath);
         String url = "https://weibo.com/";
         driver.get(url); // 打开指定的网站
         logger.info("请输入验证码完成登录！");

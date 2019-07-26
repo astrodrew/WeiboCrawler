@@ -30,7 +30,7 @@ public class UIManager {
         //读取配置信息
         propertiesUtil.readProperties();
         // selenium 模拟浏览器登录
-        WebDriver webDriver = SeleniumOperator4Weibo.ManuallyLoginWeibo();
+        WebDriver webDriver = SeleniumOperator4Weibo.ManuallyLoginWeibo(propertiesUtil.driverPath);
         //监控日志
         MonitorManager monitorManager = new MonitorManager();
         monitorManager.start();
@@ -40,14 +40,16 @@ public class UIManager {
         for (int i=0;i<fineTimeSlices.size();i++){
             String startTime = fineTimeSlices.get(i).split(",")[0];
             String endTime = fineTimeSlices.get(i).split(",")[1];
-            DownloadHtmlSource downloadHtmlSource = new DownloadHtmlSource(webDriver,"范冰冰,偷税,漏税",startTime,endTime,i);
+            DownloadHtmlSource downloadHtmlSource = new DownloadHtmlSource(webDriver,propertiesUtil.keywords,startTime,endTime,i);
             downloadHtmlSource.start();
         }
         //解析
         ParseData parseData = new ParseByJsoup(webDriver);
         ((ParseByJsoup) parseData).start();
         //存储
-        InsertData insertData = new InsertData();
-        insertData.start();
+        if(propertiesUtil.isInsert){
+            InsertData insertData = new InsertData();
+            insertData.start();
+        }
     }
 }
