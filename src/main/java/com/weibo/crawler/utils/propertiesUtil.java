@@ -29,11 +29,11 @@ public class propertiesUtil {
             password =pros.get("password").toString();
             driverPath = pros.get("driverPath").toString();
             keywords = pros.get("keywords").toString();
-
             startTime = pros.get("startTime").toString();
             endTime = pros.get("endTime").toString();
             interval = Integer.valueOf(pros.get("interval").toString());
-            isInsert = Boolean.getBoolean(pros.get("is_intert").toString());
+            isInsert =  Boolean.valueOf(pros.get("is_Intert").toString());
+//            System.out.println(pros.get("is_Intert").toString());
         } catch (IOException e) {
 
         }
@@ -42,6 +42,6 @@ public class propertiesUtil {
 
     public static void main(String[] args) throws UnsupportedEncodingException, FileNotFoundException {
         readProperties();
-        System.out.println(keywords);
+        System.out.println(isInsert);
     }
 }

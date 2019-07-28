@@ -1,6 +1,4 @@
 package com.weibo.crawler.ui;
-
-
 import com.weibo.crawler.download.DownloadHtmlSource;
 import com.weibo.crawler.monitor.MonitorManager;
 import com.weibo.crawler.parser.ParseByJsoup;
@@ -11,7 +9,6 @@ import com.weibo.crawler.selenium.SeleniumOperator4Weibo;
 import com.weibo.crawler.utils.FileOperaterUtil;
 import com.weibo.crawler.utils.propertiesUtil;
 import org.openqa.selenium.WebDriver;
-
 import javax.management.monitor.Monitor;
 import java.io.IOException;
 import java.util.HashMap;

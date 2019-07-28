@@ -18,7 +18,7 @@ public class MonitorManager extends Thread {
                 logger.info("当前存了" + MongoHelper.getCount(MongoHelper.mongoCollection) + "条数据,"
                         + "还有" + ParseByJsoup.havaParsedData .size() + "条没存");
             }else{
-               logger.info("下载了" + ParseByJsoup.havaParsedData .size() + "解析条数据");
+               logger.info("解析了" + ParseByJsoup.havaParsedData .size() + "条数据");
             }
             try {
                 Thread.sleep(3000);

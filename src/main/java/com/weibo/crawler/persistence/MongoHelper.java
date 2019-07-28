@@ -30,4 +30,7 @@ public class MongoHelper {
         return count;
     }
 
+    public static void main(String[] args) {
+
+    }
 }
