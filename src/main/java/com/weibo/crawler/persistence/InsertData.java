@@ -35,7 +35,7 @@ public class InsertData extends Thread{
             if(ParseByJsoup.havaParsedData.size() > 0){
                 Document document = ParseByJsoup.havaParsedData.poll();
                 toPushDocuments.add(document);
-                toPushDocuments = removeDuplicate(toPushDocuments);
+                removeDuplicate(toPushDocuments);
                 if(toPushDocuments.size() >= 50){
                     try{
                         collection.insertMany(toPushDocuments);}

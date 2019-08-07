@@ -51,6 +51,21 @@ public class ParseByJsoup extends  Thread implements ParseData  {
                     String repostNum = null;
                     String commentNum = null;
                     String awesome = null;
+                    Elements comments = element.select("div.list > div.card-review.s-ptb10");
+                    List<org.bson.Document> commentList = new ArrayList<org.bson.Document>();
+                    String commentUser = null;
+                    String commentContent = null;
+                    String commentFrom = null;
+                    for(Element comment:comments){
+                        org.bson.Document bsonDoc = new org.bson.Document();
+                        commentUser = comment.select("div.txt > a.name").text();
+                        commentContent = comment.select("div.txt").text().replace(commentUser+" ：","").trim();
+                        commentFrom = comment.select("div.fun > p.from").text();
+                        bsonDoc.append("评论用户名",commentUser);
+                        bsonDoc.append("评论内容",commentContent);
+                        bsonDoc.append("发布来源",commentFrom);
+                        commentList.add(bsonDoc);
+                    }
                     if (cardActs.size() == 4) {
                         repostNum = cardActs.get(1).text().replace(" ","").equals("转发")
                                 ?"0":cardActs.get(1).text().replace(" ","").replace("转发","");
@@ -59,17 +74,11 @@ public class ParseByJsoup extends  Thread implements ParseData  {
                         awesome = cardActs.get(3).text().replace(" ","").equals("")
                                 ?"0":cardActs.get(3).text().replace(" ","");
                     }
-//                    HashMap<String,String> dataMap = new HashMap<String, String>();
-//                    dataMap.put("昵称",nickName);
-//                    dataMap.put("微博正文",text);
-//                    dataMap.put("来源",from);
-//                    dataMap.put("转发数",repostNum);
-//                    dataMap.put("评论数",commentNum);
-//                    dataMap.put("点赞数",awesome);
                     if( !text.replace(" ","").equals("")){
                         org.bson.Document document = new org.bson.Document("昵称",nickName)
                                 .append("微博正文",text)
                                 .append("来源",from)
+                                .append("评论",commentList)
                                 .append("转发数",repostNum)
                                 .append("评论数",commentNum)
                                 .append("点赞数",awesome);

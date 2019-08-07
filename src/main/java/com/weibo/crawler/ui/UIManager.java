@@ -34,11 +34,12 @@ public class UIManager {
         //时间片调度，下载
         ScheduleManager scheduleManager = new ScheduleManager(propertiesUtil.interval);
         List<String> fineTimeSlices = scheduleManager.getFineTimeSlice(propertiesUtil.startTime,propertiesUtil.endTime);
+        Thread[] downLoadPool = new Thread[fineTimeSlices.size()];
         for (int i=0;i<fineTimeSlices.size();i++){
             String startTime = fineTimeSlices.get(i).split(",")[0];
             String endTime = fineTimeSlices.get(i).split(",")[1];
-            DownloadHtmlSource downloadHtmlSource = new DownloadHtmlSource(webDriver,propertiesUtil.keywords,startTime,endTime,i);
-            downloadHtmlSource.start();
+            downLoadPool[i] = new DownloadHtmlSource(webDriver,propertiesUtil.keywords,startTime,endTime,i);
+            downLoadPool[i].start();
         }
         //解析
         ParseData parseData = new ParseByJsoup(webDriver);
