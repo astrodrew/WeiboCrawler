@@ -1,12 +1,8 @@
----
-typora-copy-images-to: ./
----
-
 # WeiboCrawler
 
 ## 简介
 
-WeiboCrawler 是基于微博搜索功能用来采集微博数据的爬虫，利用 selenium 模拟微博登录，获取微博页面，然后使用Jsoup进行页面解析，获取微博的六个字段，包括【作者（昵称），来源，微博正文，转发数，点赞数，评论数】。
+WeiboCrawler 是基于微博搜索功能用来采集微博数据的爬虫，利用 selenium 模拟微博登录，获取微博页面，然后使用Jsoup进行页面解析，获取微博的六个字段，包括【作者（昵称），来源，微博正文,评论 ,转发数，点赞数，评论数】。
 
 ## 准备
 
@@ -87,5 +83,7 @@ WeiboCrawler 是基于微博搜索功能用来采集微博数据的爬虫，利�
 
 3.运行UIManager，按照控制台输出的提示完成数据爬取
 
-​	![效果图](https://github.com/astrodrew/WeiboCrawler/blob/master/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190726115112.png)
+​	![效果图](https://github.com/astrodrew/WeiboCrawler/blob/master/console.png)
+
+​	![效果图](https://github.com/astrodrew/WeiboCrawler/blob/master/db.png)
 
