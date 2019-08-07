@@ -1,4 +1,4 @@
 target/
 .idea
 src/main/resources/crawler.properties
-src/main/java/com/weibo/crawler/meetingCrawler
+src/main/java/com/weibo/crawler/meetingcrawler
