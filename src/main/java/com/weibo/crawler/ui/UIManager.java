@@ -26,6 +26,7 @@ public class UIManager {
 //        HashMap inputMap = FileOperaterUtil.getSearchInputFromFile("search_input.txt");
         //读取配置信息
         propertiesUtil.readProperties();
+
         // selenium 模拟浏览器登录
         WebDriver webDriver = SeleniumOperator4Weibo.ManuallyLoginWeibo(propertiesUtil.driverPath);
         //监控日志

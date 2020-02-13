@@ -4,6 +4,9 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.List;
 
+
+// 测试失败了
+
 public class FileOperaterUtil {
     public  static  String readFromFile(String filePath,String charset) throws IOException {
         File fileObj = new File(filePath);
